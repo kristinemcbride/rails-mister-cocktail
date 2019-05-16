@@ -1,0 +1,21 @@
+<h2><%= @cocktail.name %></h2>
+<img class="img-rounded " style= "width: 200px" src='<%= @cocktail.photourl %>'alt="">
+<% @cocktail.doses.each do |dose| %>
+  <ul>
+    <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "delete", dose_path(dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" }  %></li>
+  </ul>
+<% end %>
+
+<h2><%= @cocktail.name %> Recipe</h2>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+       <%= f.input :description %>
+       <%= f.association :ingredient, as: :select%>
+        <%= f.button :submit, class: "btn-primary" %>
+  <% end %>
+
+
+
+

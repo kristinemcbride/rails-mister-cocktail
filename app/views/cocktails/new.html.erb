@@ -1,0 +1,16 @@
+<div>
+<div class="container p-4">
+  <div class="border p-4">
+    <h1>Add a Cocktail</h1>
+
+    <%= simple_form_for(@cocktail) do |f| %>
+       <%= f.input :name %>
+       <%= f.input :photourl %>
+        <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
+
