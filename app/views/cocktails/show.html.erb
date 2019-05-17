@@ -5,7 +5,8 @@
     <div>
 <h2><%= @cocktail.name %></h2>
 <br>
-<img class="img-rounded " style= "width: 200px" src='<%= @cocktail.photourl %>'alt="">
+<img class="img-rounded " style= "width: 250px; height: 250px; object-fit: cover;
+  border-radius: 10px;" src='<%=cl_image_path @cocktail.photo, crop: :fill%>'alt="">
 </div>
 <div>
 <h4>Recipe</h4>
@@ -21,13 +22,13 @@
 </div>
 <br>
 <br>
-<div>
+<div class="form p-5 border p-4">
   <h4>Add a new receipe dose</h4>
   <br>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
        <%= f.input :description %>
        <%= f.association :ingredient, as: :select%>
-        <%= f.button :submit, class: "btn-primary" %>
+        <%= f.button :submit, class: " btn btn-primary" %>
   <% end %>
   </div>
 </div>

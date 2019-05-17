@@ -1,17 +1,26 @@
-<div>
+
 <div class="container text-white p-4">
+  <div class="flash flash-danger alert alert-dismissible fade show" role="alert">
+  <span><strong>Oops!</strong> 😱 a problem has occurred while processing your booking.</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+
   <h2>Add a Cocktail</h2>
-  <div class="border p-4 text-white">
+  <br>
 
-
+  <div class=" form border p-4 text-white">
     <%= simple_form_for(@cocktail) do |f| %>
        <%= f.input :name %>
-       <%= f.input :photourl %>
-        <%= f.button :submit, class: "btn-primary" %>
+       <%= f.input :photo %>
+       <%= f.input :photo_cache, as: :hidden %>
+       <%= f.button :submit, class: "btn-primary" %>
     <% end %>
   </div>
 </div>
-</div>
+
+
 
 
 

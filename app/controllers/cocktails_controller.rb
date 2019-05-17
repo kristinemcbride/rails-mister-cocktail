@@ -21,9 +21,13 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def search
+    @cocktail = Cocktail.find(params[:id])
+  end
+
   private
 
   def strong_cocktail_params
-    params.require(:cocktail).permit(:name, :photourl)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

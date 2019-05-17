@@ -3,3 +3,53 @@
 @import "avatar";
 @import "navbar";
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:10px;
+  align-content: center;
+  margin-bottom: 40px;
+
+}
+
+.card-category {
+  height: 250px;
+  width: 250px;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.card-category:hover {
+  opacity: 0.8;
+}
+
+.name {
+  font-size: 20px;
+  color: white;
+}
+.name:hover {
+ font-weight: bold;
+ text-decoration: none;
+ color: white;
+ font-size: 25px;
+
+}
+
+
+.btn {
+  background-color: #45364B;
+  border-color: #45364B;
+}
+
+.btn:hover {
+  background-color: #45364B;
+  border-color: white;
+  opacity: 0.8;
+}
+
+
+.form {
+  margin-bottom: 40px;
+}

@@ -1,0 +1,12 @@
+
+<div class="container text-white p-4">
+  <h4>Add a new receipe dose for <%= @cocktail.name %></h4>
+  <br>
+  <div class="p-4">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+       <%= f.input :description %>
+       <%= f.association :ingredient, as: :select%>
+        <%= f.button :submit, class: "btn btn-primary" %>
+        <% end %>
+  </div>
+  </div>
