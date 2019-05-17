@@ -1,20 +1,36 @@
+<div class="container text-white p-3 d-inline-block text-center">
+  <br>
+  <br>
+  <div class="container d-flex justify-content-around ">
+    <div>
 <h2><%= @cocktail.name %></h2>
+<br>
 <img class="img-rounded " style= "width: 200px" src='<%= @cocktail.photourl %>'alt="">
+</div>
+<div>
+<h4>Recipe</h4>
+<br>
 <% @cocktail.doses.each do |dose| %>
   <ul>
-    <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "delete", dose_path(dose),
+    <li><%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "🗑", dose_path(dose),
       method: :delete,
       data: { confirm: "Are you sure?" }  %></li>
   </ul>
 <% end %>
-
-<h2><%= @cocktail.name %> Recipe</h2>
-
+</div>
+</div>
+<br>
+<br>
+<div>
+  <h4>Add a new receipe dose</h4>
+  <br>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
        <%= f.input :description %>
        <%= f.association :ingredient, as: :select%>
         <%= f.button :submit, class: "btn-primary" %>
   <% end %>
+  </div>
+</div>
 
 
 
